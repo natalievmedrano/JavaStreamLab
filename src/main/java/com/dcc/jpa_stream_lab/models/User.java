@@ -6,7 +6,6 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -81,9 +80,9 @@ public class User implements Serializable {
 		return this.registrationDate;
 	}
 
-	public void setRegistrationDate(Timestamp registrationDate) {
-		this.registrationDate = registrationDate;
-	}
+	//public void setRegistrationDate(int registrationDate) {
+		//this.registrationDate = registrationDate;
+	//}
 
 	public List<ShoppingcartItem> getShoppingcartItems() {
 		return this.shoppingcartItems;

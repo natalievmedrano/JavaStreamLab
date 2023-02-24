@@ -66,7 +66,8 @@ public class StreamLabService {
     {
         // Write a query that gets each product that CONTAINS an "s" in the products name.
         // Return the list
-    	return null;
+        return products.findAll().stream().filter(p -> p.getName().contains("s")).toList();
+
     }
 
     public List<User> RProblemFour()
@@ -74,8 +75,10 @@ public class StreamLabService {
         // Write a query that gets all the users who registered BEFORE 2016
         // Return the list
         // Research 'java create specific date' and 'java compare dates'
-        // You may need to use the helper classes imported above!
-    	
+        // You may need to use the helper classes imported above
+        //return users.findAll().stream().filter(user -> user.getRegistrationDate().before(2016)).toList();
+
+       // return users.findAll().stream().filter(user -> user.getRegistrationDate().before(2015/12/31)).toList();
         return null;
     }
 
@@ -102,7 +105,8 @@ public class StreamLabService {
     {
         // Write a query that retrieves all of the products in the shopping cart of the user who has the email "afton@gmail.com".
         // Return the list
-
+        User userEmail = users.findAll().stream().filter(user -> user.getEmail().contains("afton@gmail.com")).findFirst().orElse(null);
+        List<Product> products1 = products.findAll().stream().filter(product -> product.getShoppingcartItems().contains(userEmail)).toList();
     	return null;
     }
 

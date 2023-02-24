@@ -61,6 +61,7 @@ public class Product implements Serializable {
 		this.name = name;
 	}
 
+
 	public Integer getPrice() {
 		return this.price;
 	}
