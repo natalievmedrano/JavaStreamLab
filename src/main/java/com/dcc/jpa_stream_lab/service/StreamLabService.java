@@ -76,10 +76,9 @@ public class StreamLabService {
         // Return the list
         // Research 'java create specific date' and 'java compare dates'
         // You may need to use the helper classes imported above
-        //return users.findAll().stream().filter(user -> user.getRegistrationDate().before(2016)).toList();
-
-       // return users.findAll().stream().filter(user -> user.getRegistrationDate().before(2015/12/31)).toList();
-        return null;
+        Calendar myDate = new GregorianCalendar(2016,Calendar.JANUARY,1);
+        Date my_date = myDate.getTime();
+        return users.findAll().stream().filter(user -> user.getRegistrationDate().before(my_date)).toList();
     }
 
     public List<User> RProblemFive()
